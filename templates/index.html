@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML API</title>
+</head>
+<body>
+   
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">	
+                <h2 class="card-heading">
+                    Diabities Classification
+                </h2>
+            </div>
+            <form class="card-form" action="{{ url_for('predict')}}" method="POST">
+                <div class="input">
+                    <input name="Pregnancies" type="number" step="any" min="0" max="20"  class="input-field" required/>
+                    <label  class="input-label"> Pregnancies</label>
+                </div>
+                
+                <div class="input">
+                    <input name="Glucose" type="number" step="any" min="0" max="1000" class="input-field" required/>
+                    <label  class="input-label">Glucose</label>
+                </div>
+                
+                <div class="input">
+                    <input name="BloodPressure" type="number" step="any" min="0" max="1000" class="input-field" required/>
+                    <label  class="input-label">Blood Pressure (mm Hg)</label>
+                </div>
+
+                <div class="input">
+                    <input name="SkinThickness" type="number" step="any" min="0" max="1000" class="input-field" required/>
+                    <label  class="input-label">SkinThickness (mm)</label>
+                </div>
+                
+                <div class="input">
+                    <input name="Insulin" type="number" step="any" min="0" max="1000" class="input-field" required/>
+                    <label  class="input-label">Insulin (mu U/ml)</label>
+                </div>
+
+                <div class="input">
+                    <input name="BMI" type="number" step="any" min="10" max="100" class="input-field" required/>
+                    <label  class="input-label">Body mass index (weight in kg/(height in m)^2)</label>
+                </div>
+
+                <div class="input">
+                    <input name="DiabetesPedigreeFunction" type="number" step="any" min="0" max="20" class="input-field" required/>
+                    <label  class="input-label">DiabetesPedigreeFunction</label>
+                </div>
+
+                <div class="input">
+                    <input name="Age" type="number" step="any" min="1" max="100" class="input-field" required/>
+                    <label  class="input-label">Age (years)</label>
+                </div>
+
+                <div class="action">
+                    <button type="submit" class="action-button">Predict</button>
+                </div>
+            </form>
+
+            <center><p style="color: rgb(0, 139, 19); font-weight: bold;">{{ prediction_text }}</p>
+		<!-- <img src="{{ image }}" alt="{{ prediction_text }}"> -->
+</center>
+        </div>
+    </div>
+    
+</body>
+</html>
