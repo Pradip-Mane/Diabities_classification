@@ -10,7 +10,7 @@ IMG_FOLDER=os.path.join('static','IMG')
 app.config['UPLOAD_FOLDER']=IMG_FOLDER
 
 ##Load the model
-regmodel=pickle.load(open('Housing_reg_model.pkl', 'rb')) #rb
+model=pickle.load(open('SVM_Diabities_Class_model.pkl', 'rb')) #rb
 
 @app.route('/')
 def home():
@@ -19,12 +19,10 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
 
-    data=[float(x) for x in request.form.values()]
-    data = np.array(data)
-    print(x)
-    prediction = model.predict(x)
-    print(prediction)
-    image=prediction[0]+'.png'
+    data1=[float(x) for x in request.form.values()]
+    data = np.array([data1])
+    prediction = model.predict(data)
+    image=str(prediction[0])+'.png'
     image=os.path.join(app.config['UPLOAD_FOLDER'],image)
 
    

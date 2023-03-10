@@ -39,7 +39,7 @@ input {
 	border-radius: 8px;
 	overflow: hidden;
 	padding-bottom: 50%;
-	background-image: url('https://mir-s3-cdn-cf.behance.net/projects/404/10362339.547fe408c9b6a.png');
+	background-image: url('https://www.niddk.nih.gov/-/media/Images/Health-Information/Diabetes/diabetes-monitor-fruits-vegetables-small_597x347.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: 0 5%;
@@ -51,9 +51,9 @@ input {
 	left: 10%;
 	top: 15%;
 	right: 10%;
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	font-weight: 700;
-	color: #735400;
+	color: hwb(0 96% 3%);
 	line-height: 1.222;
 	small {
 		display: block;
@@ -111,7 +111,7 @@ input {
 	padding: 1em;
 	width: 100%;
 	font-weight: 500;
-	background-color: #6658d3;
+	background-color: #58d3b8;
 	border-radius: 6px;
 	color: #FFF;
 	border: 0;
